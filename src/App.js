@@ -26,7 +26,20 @@ componentDidMount(){
 render(){
   return (
     <div className="App">
-
+      <div className = "jumbotron">
+    <div className = "container">
+      <h1 className  = "center">STAR WARS FILME </h1>
+      <p>filmes do starwars</p>
+    </div>
+  </div>
+  <div className="card" style={{width: '18rem'}}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="index.php" className="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+  
     </div>
   );
 }
