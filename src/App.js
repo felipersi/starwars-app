@@ -4,7 +4,6 @@ import Axios from 'axios';
 class App extends Component {
 constructor(props){
   super(props);
-
   this.state = {
     films: [],
   }
@@ -32,15 +31,30 @@ render(){
       <p>filmes do starwars</p>
     </div>
   </div>
-  <div className="card" style={{width: '18rem'}}>
-  <div className="card-body">
-    <h5 className="card-title">Special title treatment</h5>
-    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="index.php" className="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
   
+  {
+    
+    this.state.films.map(function(films){
+      return(
+        <div className="card" style={{width: '18rem'}}>
+        
+        <div className="card-body">
+        <h5 className="card-title">
+        {films.title}
+        </h5>
+        <p className="card-text">{films.opening_crawl} </p>
+        <a href="index.php" className="btn btn-primary">Mais</a>
     </div>
+    </div>
+    
+      );
+    })
+
+ }
+    
+  </div>
+  
+      
   );
 }
 }
