@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card';
+import CardColumns from 'react-bootstrap/CardColumns';
+import Container from 'react-bootstrap/Container';
+import { Col } from 'react-bootstrap';
+
 
 class App extends Component {
 constructor(props){
@@ -31,27 +37,31 @@ render(){
       <p>filmes do starwars</p>
     </div>
   </div>
-  
+  <Container>
+    <CardColumns>
+  <Col xs lg="4">
   {
-    
     this.state.films.map(function(films){
-      return(
-        <div className="card" style={{width: '18rem'}}>
-        
-        <div className="card-body">
-        <h5 className="card-title">
-        {films.title}
-        </h5>
-        <p className="card-text">{films.opening_crawl} </p>
-        <a href="index.php" className="btn btn-primary">Mais</a>
-    </div>
-    </div>
-    
+      return(   
+  <Col>
+    <Card style={{ width: '18rem' }}>
+    <Card.Body>
+      <Card.Title>{films.title}</Card.Title>
+      <Card.Subtitle className="mb-6 text-muted">Ep:{films.episode_id}</Card.Subtitle>
+    <Card.Text>{films.opening_crawl}</Card.Text>
+  </Card.Body>
+  <Card.Footer>
+    <small className="text-muted">{films.director}</small>
+    </Card.Footer>
+  </Card>
+  </Col>
+
       );
     })
-
  }
-    
+ </Col>
+ </CardColumns>
+    </Container>
   </div>
   
       
