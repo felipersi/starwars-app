@@ -6,6 +6,8 @@ import CardColumns from 'react-bootstrap/CardColumns';
 import Container from 'react-bootstrap/Container';
 import { Col } from 'react-bootstrap';
 
+import CardsCustom from "./components/Cards/CardCustom";
+
 
 class App extends Component {
 constructor(props){
@@ -28,6 +30,8 @@ componentDidMount(){
   this.getFilms();
 }
 
+
+
 render(){
   return (
     <div className="App">
@@ -43,20 +47,11 @@ render(){
   {
     this.state.films.map(function(films){
       return(   
-  <Col>
-    <Card style={{ width: '18rem' }}>
-    <Card.Body>
-      <Card.Title>{films.title}</Card.Title>
-      <Card.Subtitle className="mb-6 text-muted">Ep:{films.episode_id}</Card.Subtitle>
-    <Card.Text>{films.opening_crawl}</Card.Text>
-  </Card.Body>
-  <Card.Footer>
-    <small className="text-muted">{films.director}</small>
-    </Card.Footer>
-  </Card>
-  </Col>
+        <CardsCustom>
 
-      );
+        </CardsCustom>
+
+        );
     })
  }
  </Col>
