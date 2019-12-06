@@ -14,13 +14,7 @@ export default class SwapiProvider extends Component {
         }
 
     }
-
-    selectCharacter = (films) => {
-        this.setState({
-            selectedCharacter: films
-        })
-    }
-
+       
     getSearch = (name) => {
         if(name !== ""){
             fetch(`https://swapi.co/api/films/?search=${name}`)
@@ -32,7 +26,6 @@ export default class SwapiProvider extends Component {
         }
         
     }
-   
     render() {
         const value = {
             state: { ...this.state },
