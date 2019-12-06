@@ -10,10 +10,16 @@ export default class SwapiProvider extends Component {
     
         this.state = {
             films: [],
+
         }
 
     }
 
+    selectCharacter = (films) => {
+        this.setState({
+            selectedCharacter: films
+        })
+    }
 
     getSearch = (name) => {
         if(name !== ""){
@@ -26,8 +32,7 @@ export default class SwapiProvider extends Component {
         }
         
     }
-
-
+   
     render() {
         const value = {
             state: { ...this.state },
